@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+
+<head>
+  <title>PANEL</title>
+  <!-- Read Dedicated CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
+  <script>
+    tailwind.config = {
+      darkMode: "light",
+    };
+  </script>
+
+
+</head>
+
+<body>
+<div layout:fragment="content">
+  <div class="flex items-center justify-center" th:if="${rolesUsuario.tieneRol('ROLE_ADMIN-CATALOGO')}">
+    <div class="w-1/2 my-8">
+      <h4 class="text-medium">PANEL ADMINISTRADOR DE CATALOGO</h4>
+      <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+          <thead class="text-xs text-gray-700 uppercase dark:text-gray-400">
+          <tr>
+            <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
+              Producto
+            </th>
+            <th scope="col" class="px-6 py-3">
+              Color
+            </th>
+            <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
+              Categoria
+            </th>
+            <th scope="col" class="px-6 py-3">
+              Precio
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr class="border-b border-gray-200 dark:border-gray-700">
+            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
+              Apple MacBook Pro 17"
+            </th>
+            <td class="px-6 py-4">
+              Silver
+            </td>
+            <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
+              Laptop
+            </td>
+            <td class="px-6 py-4">
+              $2999
+            </td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-700">
+            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
+              Microsoft Surface Pro
+            </th>
+            <td class="px-6 py-4">
+              White
+            </td>
+            <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
+              Laptop PC
+            </td>
+            <td class="px-6 py-4">
+              $1999
+            </td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-700">
+            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
+              Magic Mouse 2
+            </th>
+            <td class="px-6 py-4">
+              Black
+            </td>
+            <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
+              Accessories
+            </td>
+            <td class="px-6 py-4">
+              $99
+            </td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-700">
+            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
+              Google Pixel Phone
+            </th>
+            <td class="px-6 py-4">
+              Gray
+            </td>
+            <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
+              Phone
+            </td>
+            <td class="px-6 py-4">
+              $799
+            </td>
+          </tr>
+          <tr>
+            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
+              Apple Watch 5
+            </th>
+            <td class="px-6 py-4">
+              Red
+            </td>
+            <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
+              Wearables
+            </td>
+            <td class="px-6 py-4">
+              $999
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="flex items-center justify-center" th:if="${rolesUsuario.tieneRol('ROLE_ADMIN-VENTAS')}">
+    <div class="w-1/2 my-8">
+      <h4>PANEL ADMINISTRADOR DE VENTAS</h4>
+      <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+          <thead class="text-xs text-gray-700 uppercase dark:text-gray-400">
+          <tr>
+            <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
+              Nro Comprobante
+            </th>
+            <th scope="col" class="px-6 py-3">
+              DNI
+            </th>
+            <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
+              Nombre y apellido
+            </th>
+            <th scope="col" class="px-6 py-3">
+              Monto
+            </th>
+          </tr>
+          </thead>
+          <tbody class="text-sm font-normal text-gray-700 dark:text-gray-400">
+          <tr class="border-b border-gray-200 dark:border-gray-700">
+            <td class="px-6 py-4">
+              001
+            </td>
+            <td class="px-6 py-4">
+              12345678
+            </td>
+            <td class="px-6 py-4">
+              Juan Pérez
+            </td>
+            <td class="px-6 py-4">
+              $500.00
+            </td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-700">
+            <td class="px-6 py-4">
+              002
+            </td>
+            <td class="px-6 py-4">
+              87654321
+            </td>
+            <td class="px-6 py-4">
+              María González
+            </td>
+            <td class="px-6 py-4">
+              $750.00
+            </td>
+          </tr>
+          <tr class="border-b border-gray-200 dark:border-gray-700">
+            <td class="px-6 py-4">
+              003
+            </td>
+            <td class="px-6 py-4">
+              55555555
+            </td>
+            <td class="px-6 py-4">
+              Carlos Rodríguez
+            </td>
+            <td class="px-6 py-4">
+              $1200.00
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+</div>
+
+
+</body>
+
+</html>
